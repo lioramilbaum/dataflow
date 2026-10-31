@@ -1,0 +1,29 @@
+name: dataflow-capd
+runtime:
+  name: python
+  options:
+    toolchain: uv
+description: CAPD workload cluster via Pulumi provider extension for CAPI
+
+config:
+  clusterName:
+    type: string
+    default: dataflow-dev
+  namespace:
+    type: string
+    default: dataflow
+  kubernetesVersion:
+    type: string
+    default: v1.36.4
+  controlPlaneReplicas:
+    type: integer
+    default: 1
+  workerReplicas:
+    type: integer
+    default: 2
+  podCidr:
+    type: string
+    default: "192.168.0.0/16"
+  serviceCidr:
+    type: string
+    default: "10.128.0.0/12"
