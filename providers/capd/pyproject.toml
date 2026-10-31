@@ -1,0 +1,26 @@
+[project]
+name = "dataflow-capd"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pulumi==3.273.0",
+    "pulumi-kubernetes==4.34.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "pyright==1.1.414",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.pyright]
+include = ["__main__.py", "dataflow_capd", "tests"]
+venvPath = "."
+venv = ".venv"

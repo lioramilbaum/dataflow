@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^Makefile$"],
+      "matchStrings": ["CAPI_VERSION\\s*:=\\s*(?<currentValue>v[\\d.]+)"],
+      "depNameTemplate": "kubernetes-sigs/cluster-api",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^Makefile$"],
+      "matchStrings": ["PULUMI_K8S_VERSION\\s*:=\\s*(?<currentValue>[\\d.]+)"],
+      "depNameTemplate": "pulumi/pulumi-kubernetes",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^infra/management/kind-config\\.yaml$"],
+      "matchStrings": [
+        "image: kindest/node:(?<currentValue>v[\\d.]+)@(?<currentDigest>sha256:[a-f0-9]+)"
+      ],
+      "depNameTemplate": "kindest/node",
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
