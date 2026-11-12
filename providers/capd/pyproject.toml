@@ -3,8 +3,8 @@ name = "dataflow-capd"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "pulumi==3.273.0",
-    "pulumi-kubernetes==4.34.2",
+    "pulumi==3.276.0",
+    "pulumi-kubernetes==4.34.3",
 ]
 
 [dependency-groups]
