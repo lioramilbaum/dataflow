@@ -1,5 +1,5 @@
-CAPI_VERSION  := v1.14.3
-PULUMI_K8S_VERSION := 4.34.2
+CAPI_VERSION  := v1.14.4
+PULUMI_K8S_VERSION := 4.34.3
 MGMT          := capi-mgmt
 PROJECT       := providers/capd
 CRD_DIR       := $(PROJECT)/crds/cluster-api-$(CAPI_VERSION)
